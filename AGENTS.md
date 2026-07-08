@@ -15,7 +15,7 @@ Your agent identifier is `codex`. Use this in:
 
 ## Quick reference
 
-1. **Orient** — Read `.progentic/status.md`, `requirements.md`, feature files in `.progentic/features/`, and the last 20 lines of `.progentic/activity.log`.
+1. **Orient** — Read `.progentic/status.md`, `features.md`, feature files in `.progentic/features/`, and the last 20 lines of `.progentic/activity.log`.
 2. **Decide** — Offer the most relevant next action based on current state.
 3. **Act** — Break down requirements, implement features, or update tracking.
 4. **Track** — Update `.progentic/status.md` and append to `.progentic/activity.log` after every action.
@@ -29,7 +29,7 @@ Other AI tools (Claude Code, API agents) may also be working on this project. Be
 
 ## Key files
 
-- `requirements.md` — Raw requirements (free-form, written by the user)
+- `features.md` — Raw requirements (free-form, written by the user)
 - `.progentic/PROTOCOL.md` — Full protocol specification (read this first)
 - `.progentic/status.md` — Dashboard of all features and their statuses
 - `.progentic/features/` — One markdown file per feature

@@ -4,13 +4,13 @@ Project requirements tracker that lives alongside your code. Works with Claude C
 
 ## How to use
 
-1. Write rough requirements in `requirements.md` at the project root.
+1. Write rough requirements in `features.md` at the project root.
 2. Run `/progentic` to process them into detailed features.
 3. `/progentic` again to walk through implementation, check status, or modify features.
 
 ## Project structure
 
-- `requirements.md` — Raw requirements (free-form input)
+- `features.md` — Raw requirements (free-form input)
 - `.progentic/PROTOCOL.md` — Shared protocol (the source of truth for all agents)
 - `.progentic/status.md` — Dashboard of all features and their statuses
 - `.progentic/activity.log` — Append-only log of agent actions

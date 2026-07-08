@@ -6,7 +6,7 @@ Works with multiple AI tools — Claude Code, OpenAI Codex, or any agent that ca
 
 ## How it works
 
-1. **Write rough requirements** in `requirements.md` at your project root. Be as vague as you want:
+1. **Write rough requirements** in `features.md` at your project root. Be as vague as you want:
 
    ```
    Add user authentication
@@ -18,7 +18,7 @@ Works with multiple AI tools — Claude Code, OpenAI Codex, or any agent that ca
 
 3. **Invoke again** whenever you're ready to work. It picks up where you left off: shows you what's done, what's in progress, and what's next. Choose a feature and it walks you through implementing it step by step, checking off progress as you go.
 
-4. **Keep going.** Add new requirements to `requirements.md` at any time. Reprioritize, split, merge, or remove features mid-flight. The tracker adapts.
+4. **Keep going.** Add new requirements to `features.md` at any time. Reprioritize, split, merge, or remove features mid-flight. The tracker adapts.
 
 ## Supported tools
 
@@ -57,7 +57,7 @@ A dashboard at `.progentic/status.md` summarizes everything at a glance.
 
 ```
 your-project/
-├── requirements.md                      # Your raw requirements (free-form)
+├── features.md                      # Your raw requirements (free-form)
 ├── AGENTS.md                            # Codex instructions (references protocol)
 ├── .progentic/
 │   ├── PROTOCOL.md                      # Shared protocol — the source of truth
@@ -88,7 +88,7 @@ cp -r progentic-manager/.progentic your-project/.progentic
 cp progentic-manager/CLAUDE.md your-project/CLAUDE.md
 ```
 
-Then create a `requirements.md` and run `/progentic`.
+Then create a `features.md` and run `/progentic`.
 
 ### OpenAI Codex
 
@@ -132,7 +132,7 @@ No npm install, no build step, no runtime dependencies.
 ```
 you: /progentic
 
-agent: I see 3 unprocessed requirements in requirements.md.
+agent: I see 3 unprocessed requirements in features.md.
        Here's how I'd break them down:
 
        F001: User Authentication (P1)
@@ -183,7 +183,7 @@ codex: Working on F002. Claude-code has F001.
 
 ### Adding requirements mid-project
 
-Edit `requirements.md` and invoke your tool — it detects new entries and offers to break them down without disturbing existing features.
+Edit `features.md` and invoke your tool — it detects new entries and offers to break them down without disturbing existing features.
 
 ## The protocol
 
