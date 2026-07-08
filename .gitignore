@@ -1,0 +1,24 @@
+# External projects
+DRAM/
+
+# MCP config (contains local paths)
+.mcp.json
+
+# Claude Code state and local config (session-specific, may contain sensitive context)
+.claude/state/
+.claude/hooks/
+.claude/settings.json
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
