@@ -8,8 +8,8 @@
 
 ## Features
 
-| ID | Feature | Status | Priority |
-|----|---------|--------|----------|
+| ID | Feature | Status | Priority | Assigned To |
+|----|---------|--------|----------|-------------|
 
 ## Recent Activity
 - 2026-07-01: Project initialized. Requirements pending breakdown.

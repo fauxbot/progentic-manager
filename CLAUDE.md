@@ -1,6 +1,6 @@
 # Progentic Manager
 
-Project requirements tracker that lives alongside your code.
+Project requirements tracker that lives alongside your code. Works with Claude Code, OpenAI Codex, and any file-capable AI agent.
 
 ## How to use
 
@@ -11,9 +11,12 @@ Project requirements tracker that lives alongside your code.
 ## Project structure
 
 - `requirements.md` — Raw requirements (free-form input)
+- `.progentic/PROTOCOL.md` — Shared protocol (the source of truth for all agents)
 - `.progentic/status.md` — Dashboard of all features and their statuses
+- `.progentic/activity.log` — Append-only log of agent actions
 - `.progentic/features/` — One markdown file per feature with details, criteria, and steps
-- `.claude/skills/progentic/` — The skill definition
+- `.claude/skills/progentic/` — Claude Code skill definition
+- `AGENTS.md` — OpenAI Codex instructions
 
 ## Skills
 
