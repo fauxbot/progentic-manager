@@ -85,7 +85,6 @@ git clone https://github.com/fauxbot/progentic-manager.git
 # Copy everything
 cp -r progentic-manager/.claude/skills/progentic your-project/.claude/skills/
 cp -r progentic-manager/.progentic your-project/.progentic
-cp progentic-manager/CLAUDE.md your-project/CLAUDE.md
 ```
 
 Then create a `features.md` and run `/progentic`.
@@ -113,7 +112,6 @@ git clone https://github.com/fauxbot/progentic-manager.git
 cp -r progentic-manager/.claude/skills/progentic your-project/.claude/skills/
 cp -r progentic-manager/.progentic your-project/.progentic
 cp progentic-manager/AGENTS.md your-project/AGENTS.md
-cp progentic-manager/CLAUDE.md your-project/CLAUDE.md
 ```
 
 ## Requirements
