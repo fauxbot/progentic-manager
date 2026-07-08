@@ -5,7 +5,7 @@ A skill for managing project requirements from rough ideas through detailed feat
 ## When to use
 
 Invoke with `/progentic`. Use it to:
-- Ingest new requirements (from `features.md` or inline)
+- Ingest new requirements (from `FEATURES.md` or inline)
 - Break general requirements into detailed, implementable features
 - Walk through implementing features step by step
 - Check project status and decide what to work on next
@@ -26,7 +26,7 @@ Your agent identifier is `claude-code`. Use this in:
 
 The protocol covers everything, but here's the high-level flow:
 
-1. **Orient** — Read `status.md`, `features.md`, feature files, and `activity.log`.
+1. **Orient** — Read `status.md`, `FEATURES.md`, feature files, and `activity.log`.
 2. **Decide** — Offer the most relevant next action based on current state.
 3. **Act** — Break down requirements, implement features, or update tracking.
 4. **Track** — Update `status.md` and append to `activity.log` after every action.

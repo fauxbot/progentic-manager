@@ -6,7 +6,7 @@ This document defines how any AI tool or agent interacts with the Progentic proj
 
 ```
 project-root/
-├── features.md              # Raw requirements (free-form input)
+├── FEATURES.md              # Raw requirements (free-form input)
 └── .progentic/
     ├── PROTOCOL.md              # This file
     ├── status.md                # Dashboard — auto-generated summary
@@ -24,7 +24,7 @@ project-root/
 Before taking any action, read the current state:
 
 - Read `.progentic/status.md` for the dashboard.
-- Read `features.md` for new or unprocessed requirements.
+- Read `FEATURES.md` for new or unprocessed requirements.
 - Scan `.progentic/features/` for existing features and their statuses.
 - Read `.progentic/activity.log` (last 20 lines) to see what other agents have done recently.
 - Report a brief status update to the user.
@@ -48,7 +48,7 @@ Always let the user override.
 3. Assign sequential IDs (F001, F002, ...). Check existing features to find the next available ID.
 4. Present proposed features to the user for review before writing them.
 5. After approval, write the feature files.
-6. Mark processed requirements in `features.md` by adding `<!-- processed -->` after each converted line.
+6. Mark processed requirements in `FEATURES.md` by adding `<!-- processed -->` after each converted line.
 7. Update `.progentic/status.md`.
 8. Log the action to `.progentic/activity.log`.
 
@@ -120,7 +120,7 @@ Examples:
 - **Status**: draft | ready | in-progress | done | removed
 - **Priority**: P1 | P2 | P3
 - **Assigned to**: agent-identifier | —
-- **Source requirement**: The original text from features.md
+- **Source requirement**: The original text from FEATURES.md
 - **Created**: YYYY-MM-DD
 - **Updated**: YYYY-MM-DD
 
