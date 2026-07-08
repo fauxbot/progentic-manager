@@ -82,10 +82,28 @@ Copy the skill and protocol into your project:
 ```bash
 git clone https://github.com/fauxbot/progentic-manager.git
 
-# Copy everything
+# Copy the skill and tracking directory
 cp -r progentic-manager/.claude/skills/progentic your-project/.claude/skills/
 cp -r progentic-manager/.progentic your-project/.progentic
 ```
+
+Then add Progentic to your project's `CLAUDE.md` so Claude knows about it at session start. **Append** this to your existing file (don't overwrite it):
+
+```bash
+cat >> your-project/CLAUDE.md << 'EOF'
+
+## Progentic
+
+Project requirements tracker. Write rough requirements in `features.md`, then run `/progentic` to break them into detailed features and walk through implementation.
+
+- `/progentic` — Invoke the project manager
+- `.progentic/PROTOCOL.md` — Full protocol spec
+- `.progentic/status.md` — Feature dashboard
+- `.progentic/features/` — Individual feature files
+EOF
+```
+
+If you don't have a `CLAUDE.md` yet, just create one with the content above.
 
 Then create a `features.md` and run `/progentic`.
 
@@ -98,7 +116,7 @@ cp -r progentic-manager/.progentic your-project/.progentic
 cp progentic-manager/AGENTS.md your-project/AGENTS.md
 ```
 
-Codex reads `AGENTS.md` automatically.
+Codex reads `AGENTS.md` automatically. If your project already has an `AGENTS.md`, append the contents of the Progentic one to it.
 
 ### API agents (Claude API, OpenAI API, etc.)
 
@@ -113,6 +131,8 @@ cp -r progentic-manager/.claude/skills/progentic your-project/.claude/skills/
 cp -r progentic-manager/.progentic your-project/.progentic
 cp progentic-manager/AGENTS.md your-project/AGENTS.md
 ```
+
+Then append the Progentic section to your `CLAUDE.md` (see Claude Code instructions above).
 
 ## Requirements
 
