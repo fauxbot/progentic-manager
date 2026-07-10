@@ -4,7 +4,7 @@
 
 ## Summary
 - Total features: 0
-- Done: 0 | In Progress: 0 | Ready: 0 | Draft: 0
+- Done: 0 | In Progress: 0 | Ready: 0 | Draft: 0 | Backlog: 0
 
 ## Features
 

@@ -36,6 +36,8 @@ Based on current state, offer the most relevant next action:
 - **New unprocessed requirements exist** → Offer to break them down into features.
 - **Features are in "ready" status** → Offer to start implementing the next one.
 - **A feature is "in-progress"** → Resume where it left off.
+- **Features are in "backlog"** → Mention them as parked. Offer to promote one to draft/ready if the user wants.
+- **User wants to park a feature** → Move it to backlog with a reason.
 - **User wants to add/change/remove something** → Handle it.
 - **Everything is done** → Summarize.
 
@@ -69,6 +71,24 @@ During implementation, if you discover:
 - A step needs to change → update the feature file and tell the user.
 - A new requirement emerges → create a new feature for it (don't scope-creep the current one).
 - The feature should be split → propose the split to the user.
+- A feature is blocked or should be deferred → offer to move it to backlog with a reason.
+
+### 4a. Manage the backlog
+
+Features can be moved to `backlog` from any status (except `done`). When backlogging a feature:
+
+1. Set status to `backlog`.
+2. Set the `Backlog reason` field with a short explanation (e.g., "blocked by F003", "waiting on API access", "deferred to next quarter").
+3. Clear `assigned_to` if it was set.
+4. Update `.progentic/status.md`.
+5. Log the action to `.progentic/activity.log`.
+
+To promote a feature out of backlog:
+
+1. Set status to `draft` or `ready` (depending on whether it needs more breakdown).
+2. Clear the `Backlog reason` field (set to `—`).
+3. Update `.progentic/status.md`.
+4. Log the action to `.progentic/activity.log`.
 
 ### 5. Update status dashboard
 
@@ -81,7 +101,7 @@ After any state change, regenerate `.progentic/status.md`:
 
 ## Summary
 - Total features: N
-- Done: N | In Progress: N | Ready: N | Draft: N
+- Done: N | In Progress: N | Ready: N | Draft: N | Backlog: N
 
 ## Features
 
@@ -110,6 +130,8 @@ Examples:
 2026-07-08 15:10 [codex] completed-step: F001-user-auth step 3
 2026-07-08 15:20 [codex] completed: F001-user-auth
 2026-07-08 15:25 [claude-code] created: F005-notifications (discovered during F001 implementation)
+2026-07-08 15:30 [claude-code] backlogged: F005-notifications (blocked by F003)
+2026-07-08 16:00 [codex] promoted: F005-notifications backlog → ready (F003 completed)
 ```
 
 ## Feature file template
@@ -117,10 +139,11 @@ Examples:
 ```markdown
 # FXXX: Feature Title
 
-- **Status**: draft | ready | in-progress | done | removed
+- **Status**: draft | ready | in-progress | done | backlog | removed
 - **Priority**: P1 | P2 | P3
 - **Assigned to**: agent-identifier | —
 - **Source requirement**: The original text from FEATURES.md
+- **Backlog reason**: Why this is parked (only when status is backlog) | —
 - **Created**: YYYY-MM-DD
 - **Updated**: YYYY-MM-DD
 
@@ -151,6 +174,7 @@ A clear, detailed description of what this feature does and why it matters.
 - **ready**: Fully specified with acceptance criteria and implementation steps. Ready to start.
 - **in-progress**: Currently being implemented. Steps are being checked off.
 - **done**: All acceptance criteria met, implementation complete.
+- **backlog**: Parked — recognized as valid but can't or shouldn't be worked on now. Has a reason explaining why (dependency, blocked, deferred, low priority, etc.). Can be promoted back to draft or ready when the blocker clears or priorities shift.
 - **removed**: No longer needed. File kept for history.
 
 ## Priority definitions

@@ -44,12 +44,14 @@ Multiple agents can work on the same project at the same time. The protocol hand
 
 Each feature gets its own markdown file in `.progentic/features/` with:
 
-- **Status**: draft → ready → in-progress → done (or removed)
+- **Status**: draft → ready → in-progress → done (or backlog / removed)
 - **Priority**: P1 (must have), P2 (should have), P3 (nice to have)
 - **Assignment**: Which agent is currently working on it
 - **Acceptance criteria**: Specific, testable conditions for "done"
 - **Implementation steps**: Concrete tasks, checked off as you go
 - **Decisions & notes**: Trade-offs and reasoning captured along the way
+
+Features can also be moved to **backlog** — parked with a reason when they can't be worked on yet (blocked, deferred, waiting on a dependency). They stay tracked and can be promoted back when the blocker clears.
 
 A dashboard at `.progentic/status.md` summarizes everything at a glance.
 
@@ -198,6 +200,19 @@ agent: I'll take F001. I see codex is working on F002.
 codex: Working on F002. Claude-code has F001.
        Completing step 3 of 5...
 ```
+
+### Parking a feature in the backlog
+
+```
+you: /progentic
+     park F003, we can't do offline until the sync API is ready
+
+agent: Moved F003 Offline Support to backlog.
+       Reason: waiting on sync API.
+       I'll flag it when related work is done.
+```
+
+Features in the backlog stay tracked and show up in the dashboard. When the blocker clears, promote them back to draft or ready.
 
 ### Adding requirements mid-project
 
