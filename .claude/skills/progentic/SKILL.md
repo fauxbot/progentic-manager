@@ -10,6 +10,7 @@ Invoke with `/progentic`. Use it to:
 - Walk through implementing features step by step
 - Check project status and decide what to work on next
 - Add, modify, or remove requirements and features mid-flight
+- Park features in the backlog when they're blocked or deferred, and promote them back when ready
 
 ## Protocol
 
@@ -28,8 +29,10 @@ The protocol covers everything, but here's the high-level flow:
 
 1. **Orient** — Read `status.md`, `FEATURES.md`, feature files, and `activity.log`.
 2. **Decide** — Offer the most relevant next action based on current state.
-3. **Act** — Break down requirements, implement features, or update tracking.
+3. **Act** — Break down requirements, implement features, manage the backlog, or update tracking.
 4. **Track** — Update `status.md` and append to `activity.log` after every action.
+
+Features can be moved to `backlog` when they can't be worked on yet (blocked, deferred, waiting on a dependency). Set the `Backlog reason` field, clear `assigned_to`, and log the action. Promote them back to `draft` or `ready` when the blocker clears. See PROTOCOL.md § 4a for the full workflow.
 
 ## Multi-agent awareness
 

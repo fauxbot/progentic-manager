@@ -17,8 +17,10 @@ Your agent identifier is `codex`. Use this in:
 
 1. **Orient** — Read `.progentic/status.md`, `FEATURES.md`, feature files in `.progentic/features/`, and the last 20 lines of `.progentic/activity.log`.
 2. **Decide** — Offer the most relevant next action based on current state.
-3. **Act** — Break down requirements, implement features, or update tracking.
+3. **Act** — Break down requirements, implement features, manage the backlog, or update tracking.
 4. **Track** — Update `.progentic/status.md` and append to `.progentic/activity.log` after every action.
+
+Features can be moved to `backlog` when they can't be worked on yet (blocked, deferred, waiting on a dependency). Set the `Backlog reason` field, clear `assigned_to`, and log the action. Promote them back to `draft` or `ready` when the blocker clears. See PROTOCOL.md § 4a for the full workflow.
 
 ## Multi-agent awareness
 
